@@ -23,6 +23,12 @@
     .side-nav li {
       margin: 1rem 0;
     }
+
+    .tooltip-container{
+      display: flex;
+      justify-content: center;
+      margin: 6rem;
+    }
   </style>
 
   <script type="module" src="/build/web-component-stencil.esm.js"></script>
@@ -32,6 +38,24 @@
 <body>
 
   <button id="menu-btn">menu</button>
+
+  <div class='tooltip-container'>
+    <yo-tooltip tooltipPosition="top" tooltiptext="Hey this is tooltip text, ssup">Tooltip Top</yo-tooltip>
+  </div>
+
+  <div class='tooltip-container'>
+    <yo-tooltip tooltipPosition="right" tooltiptext="Hey this is tooltip text, ssup">Tooltip Right</yo-tooltip>
+  </div>
+
+  <div class='tooltip-container'>
+    <yo-tooltip tooltipPosition="bottom" tooltiptext="Hey this is tooltip text, ssup">Tooltip Bottom</yo-tooltip>
+  </div>
+
+  <div class='tooltip-container'>
+    <yo-tooltip tooltipPosition="left" tooltiptext="Hey this is tooltip text, ssup">Tooltip Left</yo-tooltip>
+  </div>
+  
+
   <yo-side-drawer menutitle="Menu">
     <nav class="side-nav">
       <ul>

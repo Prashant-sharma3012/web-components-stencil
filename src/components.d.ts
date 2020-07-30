@@ -10,6 +10,10 @@ export namespace Components {
         "menutitle": string;
         "open": boolean;
     }
+    interface YoTooltip {
+        "tooltipposition": string;
+        "tooltiptext": string;
+    }
 }
 declare global {
     interface HTMLYoSideDrawerElement extends Components.YoSideDrawer, HTMLStencilElement {
@@ -18,8 +22,15 @@ declare global {
         prototype: HTMLYoSideDrawerElement;
         new (): HTMLYoSideDrawerElement;
     };
+    interface HTMLYoTooltipElement extends Components.YoTooltip, HTMLStencilElement {
+    }
+    var HTMLYoTooltipElement: {
+        prototype: HTMLYoTooltipElement;
+        new (): HTMLYoTooltipElement;
+    };
     interface HTMLElementTagNameMap {
         "yo-side-drawer": HTMLYoSideDrawerElement;
+        "yo-tooltip": HTMLYoTooltipElement;
     }
 }
 declare namespace LocalJSX {
@@ -27,8 +38,13 @@ declare namespace LocalJSX {
         "menutitle"?: string;
         "open"?: boolean;
     }
+    interface YoTooltip {
+        "tooltipposition"?: string;
+        "tooltiptext"?: string;
+    }
     interface IntrinsicElements {
         "yo-side-drawer": YoSideDrawer;
+        "yo-tooltip": YoTooltip;
     }
 }
 export { LocalJSX as JSX };
@@ -36,6 +52,7 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "yo-side-drawer": LocalJSX.YoSideDrawer & JSXBase.HTMLAttributes<HTMLYoSideDrawerElement>;
+            "yo-tooltip": LocalJSX.YoTooltip & JSXBase.HTMLAttributes<HTMLYoTooltipElement>;
         }
     }
 }
