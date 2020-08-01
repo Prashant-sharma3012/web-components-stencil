@@ -4,7 +4,7 @@ import { h } from "@stencil/core";
 @Component({
   tag: "yo-section",
   styleUrl: "./section.css",
-  shadow: true
+  shadow: true,
 })
 export class Section {
   @State() collapsed: boolean = false;
@@ -14,22 +14,26 @@ export class Section {
 
   handleCollapse = () => {
     this.collapsed = !this.collapsed;
-    this.collapse = this.collapsed
+    this.collapse = this.collapsed;
   };
 
   render() {
-    let content = this.collapse ? '' : <slot />
+    let content = this.collapse ? "" : <slot />;
+    let collapseAction = this.isCollapsible ? (
+      <div onClick={this.handleCollapse} class="yo-section-header-btn">
+        {this.collapsed ? "more" : "less"}
+      </div>
+    ) : (
+      ""
+    );
+    
     return (
       <div class="yo-section-container">
         <div class="yo-section-header">
           <div class="yo-section-header-title">{this.sectionTitle}</div>
-          <div onClick={this.handleCollapse} class="yo-section-header-btn">
-            {this.collapsed ? "more" : "less"}
-          </div>
+          {collapseAction}
         </div>
-        <div class="yo-section-content">
-          {content}
-        </div>
+        <div class="yo-section-content">{content}</div>
       </div>
     );
   }
