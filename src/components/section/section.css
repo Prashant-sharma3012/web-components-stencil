@@ -1,0 +1,26 @@
+.yo-section-container {
+  background-color: white;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0px 1px 4px 0px;
+  border-radius: 2px;
+}
+
+.yo-section-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.yo-section-header-title {
+}
+
+.yo-section-header-btn {
+  color: black;
+  cursor: pointer;
+}
+
+.yo-section-content {
+  max-height: 100vh;
+  transition: all 0.3s ease-in-out;
+}

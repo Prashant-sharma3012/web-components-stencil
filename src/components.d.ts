@@ -6,6 +6,11 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
+    interface YoSection {
+        "collapse": boolean;
+        "isCollapsible": boolean;
+        "sectionTitle": string;
+    }
     interface YoSideDrawer {
         "menutitle": string;
         "open": boolean;
@@ -16,6 +21,12 @@ export namespace Components {
     }
 }
 declare global {
+    interface HTMLYoSectionElement extends Components.YoSection, HTMLStencilElement {
+    }
+    var HTMLYoSectionElement: {
+        prototype: HTMLYoSectionElement;
+        new (): HTMLYoSectionElement;
+    };
     interface HTMLYoSideDrawerElement extends Components.YoSideDrawer, HTMLStencilElement {
     }
     var HTMLYoSideDrawerElement: {
@@ -29,11 +40,17 @@ declare global {
         new (): HTMLYoTooltipElement;
     };
     interface HTMLElementTagNameMap {
+        "yo-section": HTMLYoSectionElement;
         "yo-side-drawer": HTMLYoSideDrawerElement;
         "yo-tooltip": HTMLYoTooltipElement;
     }
 }
 declare namespace LocalJSX {
+    interface YoSection {
+        "collapse"?: boolean;
+        "isCollapsible"?: boolean;
+        "sectionTitle"?: string;
+    }
     interface YoSideDrawer {
         "menutitle"?: string;
         "open"?: boolean;
@@ -43,6 +60,7 @@ declare namespace LocalJSX {
         "tooltiptext"?: string;
     }
     interface IntrinsicElements {
+        "yo-section": YoSection;
         "yo-side-drawer": YoSideDrawer;
         "yo-tooltip": YoTooltip;
     }
@@ -51,6 +69,7 @@ export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
+            "yo-section": LocalJSX.YoSection & JSXBase.HTMLAttributes<HTMLYoSectionElement>;
             "yo-side-drawer": LocalJSX.YoSideDrawer & JSXBase.HTMLAttributes<HTMLYoSideDrawerElement>;
             "yo-tooltip": LocalJSX.YoTooltip & JSXBase.HTMLAttributes<HTMLYoTooltipElement>;
         }

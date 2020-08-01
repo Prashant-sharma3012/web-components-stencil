@@ -1,84 +1,98 @@
 <!DOCTYPE html>
 <html dir="ltr" lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
-  <title>Stencil Component Starter</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"
+    />
+    <title>Stencil Component Starter</title>
 
-  <style>
-    body {
-      font-family: sans-serif;
-    }
-
-    .side-nav ul{
-      list-style: none;
-    }
-
-    .side-nav a {
-      text-decoration: none;
-      color: black;
-      font-weight: 600;
-    }
-
-    .side-nav li {
-      margin: 1rem 0;
-    }
-
-    .tooltip-container{
-      display: flex;
-      justify-content: center;
-      margin: 6rem;
-    }
-  </style>
-
-  <script type="module" src="/build/web-component-stencil.esm.js"></script>
-  <script nomodule src="/build/web-component-stencil.js"></script>
-
-</head>
-<body>
-
-  <button id="menu-btn">menu</button>
-
-  <div class='tooltip-container'>
-    <yo-tooltip tooltipPosition="top" tooltiptext="Hey this is tooltip text, ssup">Tooltip Top</yo-tooltip>
-  </div>
-
-  <div class='tooltip-container'>
-    <yo-tooltip tooltipPosition="right" tooltiptext="Hey this is tooltip text, ssup">Tooltip Right</yo-tooltip>
-  </div>
-
-  <div class='tooltip-container'>
-    <yo-tooltip tooltipPosition="bottom" tooltiptext="Hey this is tooltip text, ssup">Tooltip Bottom</yo-tooltip>
-  </div>
-
-  <div class='tooltip-container'>
-    <yo-tooltip tooltipPosition="left" tooltiptext="Hey this is tooltip text, ssup">Tooltip Left</yo-tooltip>
-  </div>
-  
-
-  <yo-side-drawer menutitle="Menu">
-    <nav class="side-nav">
-      <ul>
-        <li><a href="/">Link yo</a></li>
-        <li><a href="/">Link yo one</a></li>
-        <li><a href="/">Link yo one more</a></li>
-      </ul>
-    </nav>
-  </yo-side-drawer>
-
-  <script>
-
-    const btn = document.querySelector('#menu-btn');
-    const drawer = document.querySelector('yo-side-drawer');
-
-    btn.addEventListener('click', () => {
-      if(!drawer.open){
-        drawer.open = true
+    <style>
+      body {
+        font-family: sans-serif;
       }
-    })
 
+      .side-nav ul {
+        list-style: none;
+      }
 
-  </script>
+      .side-nav a {
+        text-decoration: none;
+        color: black;
+        font-weight: 600;
+      }
 
-</body>
+      .side-nav li {
+        margin: 1rem 0;
+      }
+
+      .tooltip-container {
+        display: flex;
+        justify-content: center;
+        margin: 6rem;
+      }
+    </style>
+
+    <script type="module" src="/build/web-component-stencil.esm.js"></script>
+    <script nomodule src="/build/web-component-stencil.js"></script>
+  </head>
+  <body>
+    <button id="menu-btn">menu</button>
+
+    <yo-section>
+      <div class="tooltip-container">
+        <yo-tooltip
+          tooltipPosition="top"
+          tooltiptext="Hey this is tooltip text, ssup"
+          >Tooltip Top</yo-tooltip
+        >
+      </div>
+
+      <div class="tooltip-container">
+        <yo-tooltip
+          tooltipPosition="right"
+          tooltiptext="Hey this is tooltip text, ssup"
+          >Tooltip Right</yo-tooltip
+        >
+      </div>
+
+      <div class="tooltip-container">
+        <yo-tooltip
+          tooltipPosition="bottom"
+          tooltiptext="Hey this is tooltip text, ssup"
+          >Tooltip Bottom</yo-tooltip
+        >
+      </div>
+
+      <div class="tooltip-container">
+        <yo-tooltip
+          tooltipPosition="left"
+          tooltiptext="Hey this is tooltip text, ssup"
+          >Tooltip Left</yo-tooltip
+        >
+      </div>
+    </yo-section>
+
+    <yo-side-drawer menutitle="Menu">
+      <nav class="side-nav">
+        <ul>
+          <li><a href="/">Link yo</a></li>
+          <li><a href="/">Link yo one</a></li>
+          <li><a href="/">Link yo one more</a></li>
+        </ul>
+      </nav>
+    </yo-side-drawer>
+
+    <script>
+      const btn = document.querySelector("#menu-btn");
+      const drawer = document.querySelector("yo-side-drawer");
+
+      btn.addEventListener("click", () => {
+        if (!drawer.open) {
+          drawer.open = true;
+        }
+      });
+    </script>
+  </body>
 </html>
