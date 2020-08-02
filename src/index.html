@@ -30,7 +30,11 @@
       .tooltip-container {
         display: flex;
         justify-content: center;
-        margin: 6rem;
+        margin: 2rem;
+      }
+
+      .btn-container{
+        margin: 1rem;
       }
     </style>
 
@@ -71,6 +75,24 @@
           tooltiptext="Hey this is tooltip text, ssup"
           >Tooltip Left</yo-tooltip
         >
+      </div>
+    </yo-section>
+    
+    <yo-section>
+      <div class="btn-container">
+        <yo-button variant="contained" color="primary">contained</yo-button>
+      </div>
+      <div class="btn-container">
+        <yo-button variant="outlined" color="primary">outlined</yo-button>
+      </div>
+      <div class="btn-container">
+        <yo-button  variant="text" color="primary">text</yo-button>
+      </div>
+      <div class="btn-container">
+        <yo-button  variant="contained" color="primary">primary</yo-button>
+      </div>
+      <div class="btn-container">
+        <yo-button  variant="contained" color="secondary">secondary</yo-button>
       </div>
     </yo-section>
 

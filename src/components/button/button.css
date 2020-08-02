@@ -1,0 +1,61 @@
+button{
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 2px;
+  cursor: pointer;
+  padding: 4px 8px;
+  letter-spacing: 0.5px;
+}
+
+button:focus{
+  outline: none;
+}
+
+.yo-btn__contained{
+  border: none
+}
+
+.yo-btn__text{
+  background-color: white !important;
+  color:  #039BE5;
+  border: none
+}
+
+.yo-btn__primary{
+  background-color: #039BE5;
+}
+
+.yo-btn__primary--contained{
+  border: none;
+  background-color: #039BE5;
+}
+
+.yo-btn__primary--outlined{
+  border: 1px solid #039BE5;
+  background-color: white;
+}
+
+.yo-btn__primary--text{
+  border: 1px solid #039BE5;
+  background-color: white;
+}
+
+.yo-btn__secondary{
+  background-color: #E53935;
+}
+
+.yo-btn__secondary--contained{
+  border: none;
+  background-color: #E53935;
+}
+
+
+.yo-btn__secondary--outlined{
+  border: 1px solid #E53935;
+  background-color: white;
+}
+
+.yo-btn__secondary--text{
+  border: 1px solid #E53935;
+  background-color: white;
+}
