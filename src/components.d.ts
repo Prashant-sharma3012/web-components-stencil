@@ -15,6 +15,11 @@ export namespace Components {
         "isCollapsible": boolean;
         "sectionTitle": string;
     }
+    interface YoSelect {
+        "isMultiple": boolean;
+        "isSelecting": boolean;
+        "options": string;
+    }
     interface YoSideDrawer {
         "menutitle": string;
         "open": boolean;
@@ -37,6 +42,12 @@ declare global {
         prototype: HTMLYoSectionElement;
         new (): HTMLYoSectionElement;
     };
+    interface HTMLYoSelectElement extends Components.YoSelect, HTMLStencilElement {
+    }
+    var HTMLYoSelectElement: {
+        prototype: HTMLYoSelectElement;
+        new (): HTMLYoSelectElement;
+    };
     interface HTMLYoSideDrawerElement extends Components.YoSideDrawer, HTMLStencilElement {
     }
     var HTMLYoSideDrawerElement: {
@@ -52,6 +63,7 @@ declare global {
     interface HTMLElementTagNameMap {
         "yo-button": HTMLYoButtonElement;
         "yo-section": HTMLYoSectionElement;
+        "yo-select": HTMLYoSelectElement;
         "yo-side-drawer": HTMLYoSideDrawerElement;
         "yo-tooltip": HTMLYoTooltipElement;
     }
@@ -66,6 +78,11 @@ declare namespace LocalJSX {
         "isCollapsible"?: boolean;
         "sectionTitle"?: string;
     }
+    interface YoSelect {
+        "isMultiple"?: boolean;
+        "isSelecting"?: boolean;
+        "options"?: string;
+    }
     interface YoSideDrawer {
         "menutitle"?: string;
         "open"?: boolean;
@@ -77,6 +94,7 @@ declare namespace LocalJSX {
     interface IntrinsicElements {
         "yo-button": YoButton;
         "yo-section": YoSection;
+        "yo-select": YoSelect;
         "yo-side-drawer": YoSideDrawer;
         "yo-tooltip": YoTooltip;
     }
@@ -87,6 +105,7 @@ declare module "@stencil/core" {
         interface IntrinsicElements {
             "yo-button": LocalJSX.YoButton & JSXBase.HTMLAttributes<HTMLYoButtonElement>;
             "yo-section": LocalJSX.YoSection & JSXBase.HTMLAttributes<HTMLYoSectionElement>;
+            "yo-select": LocalJSX.YoSelect & JSXBase.HTMLAttributes<HTMLYoSelectElement>;
             "yo-side-drawer": LocalJSX.YoSideDrawer & JSXBase.HTMLAttributes<HTMLYoSideDrawerElement>;
             "yo-tooltip": LocalJSX.YoTooltip & JSXBase.HTMLAttributes<HTMLYoTooltipElement>;
         }

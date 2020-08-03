@@ -1,0 +1,70 @@
+.yo-select-container {
+  border: 1px solid;
+  border-radius: 2px;
+  padding: 8px;
+  min-height: 1rem;
+  height: 1rem;
+  cursor: pointer;
+  display: flex;
+  height: auto;
+  position: relative;
+}
+
+select {
+  min-width: 5rem;
+  border: none;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+}
+.select-list {
+  background-color: white;
+  border-radius: 2px;
+  top: 3rem;
+  left: 0;
+  box-shadow: 0px 0px 4px 0px;
+  width: 100%;
+  min-width: 100%;
+  position: absolute;
+}
+
+:host(:not([is-selecting])) .select-list {
+  display: none;
+}
+
+.select-list-items {
+  padding: 0.5rem;
+}
+.select-list-items:hover {
+  background-color: black;
+  color: white;
+}
+
+.selected-item-container {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.selected-item__multiple--container {
+  display: flex;
+}
+
+.selected-item__multiple--chip {
+  display: flex;
+  justify-content: space-between;
+  min-width: 3rem;
+  border-radius: 2px;
+  margin-right: 8px;
+  background-color: gray;
+  padding: 2px 8px;
+  color: white;
+}
+
+.selected-item--chip__label {
+  margin-right: 8px;
+}

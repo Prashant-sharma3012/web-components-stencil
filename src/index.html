@@ -33,7 +33,7 @@
         margin: 2rem;
       }
 
-      .btn-container{
+      .btn-container {
         display: flex;
         justify-content: center;
         margin: 1rem;
@@ -79,7 +79,7 @@
         >
       </div>
     </yo-section>
-    
+
     <yo-section>
       <div class="btn-container">
         <yo-button variant="contained" color="primary">contained</yo-button>
@@ -88,14 +88,18 @@
         <yo-button variant="outlined" color="primary">outlined</yo-button>
       </div>
       <div class="btn-container">
-        <yo-button  variant="text" color="primary">text</yo-button>
+        <yo-button variant="text" color="primary">text</yo-button>
       </div>
       <div class="btn-container">
-        <yo-button  variant="contained" color="primary">primary</yo-button>
+        <yo-button variant="contained" color="primary">primary</yo-button>
       </div>
       <div class="btn-container">
-        <yo-button  variant="contained" color="secondary">secondary</yo-button>
+        <yo-button variant="contained" color="secondary">secondary</yo-button>
       </div>
+    </yo-section>
+
+    <yo-section>
+      <yo-select is-multiple />
     </yo-section>
 
     <yo-side-drawer menutitle="Menu">
@@ -111,6 +115,15 @@
     <script>
       const btn = document.querySelector("#menu-btn");
       const drawer = document.querySelector("yo-side-drawer");
+      const select = document.querySelector("yo-select");
+
+      const options = [
+        { label: "One", value: 1 },
+        { label: "Two", value: 2 },
+        { label: "Three", value: 3 },
+      ];
+
+      select.setAttribute('options', JSON.stringify(options))
 
       btn.addEventListener("click", () => {
         if (!drawer.open) {
