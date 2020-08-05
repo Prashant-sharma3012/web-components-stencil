@@ -18,8 +18,10 @@ export class Tooltip {
     this.userOptions = this.options ? JSON.parse(this.options) : [];
   }
 
-  selectClicked = () => {
-    this.isSelecting = !this.isSelecting;
+  selectClicked = (e) => {
+    if(e.target.id === 'yo-select-container'){
+      this.isSelecting = !this.isSelecting;
+    }
   };
 
   optionSelected = (option: any) => {
@@ -30,6 +32,10 @@ export class Tooltip {
 
     this.selectedItem = option.label;
   };
+
+  removeLabel = (label) => {
+    this.selectedItems = this.selectedItems.filter(e => e !== label)
+  }
 
   render() {
     return (
@@ -44,7 +50,7 @@ export class Tooltip {
               {this.selectedItems.map((label) => (
                 <div class="selected-item__multiple--chip">
                   <span class="selected-item--chip__label">{label}</span>
-                  <span class="selected-item--chip__close">x</span>
+                  <span onClick={() => this.removeLabel(label)} id='remove-option' class="selected-item--chip__close">x</span>
                 </div>
               ))}
             </div>

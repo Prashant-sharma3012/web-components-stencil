@@ -38,6 +38,10 @@
         justify-content: center;
         margin: 1rem;
       }
+      .element-container{
+        display: flex;
+        flex-direction: row;
+      }
     </style>
 
     <script type="module" src="/build/web-component-stencil.esm.js"></script>
@@ -47,59 +51,67 @@
     <button id="menu-btn">menu</button>
 
     <yo-section>
-      <div class="tooltip-container">
-        <yo-tooltip
-          tooltipPosition="top"
-          tooltiptext="Hey this is tooltip text, ssup"
-          >Tooltip Top</yo-tooltip
-        >
-      </div>
+      <div class="element-container">
+        <div class="tooltip-container">
+          <yo-tooltip
+            tooltipPosition="top"
+            tooltiptext="Hey this is tooltip text, ssup"
+            >Tooltip Top</yo-tooltip
+          >
+        </div>
 
-      <div class="tooltip-container">
-        <yo-tooltip
-          tooltipPosition="right"
-          tooltiptext="Hey this is tooltip text, ssup"
-          >Tooltip Right</yo-tooltip
-        >
-      </div>
+        <div class="tooltip-container">
+          <yo-tooltip
+            tooltipPosition="right"
+            tooltiptext="Hey this is tooltip text, ssup"
+            >Tooltip Right</yo-tooltip
+          >
+        </div>
 
-      <div class="tooltip-container">
-        <yo-tooltip
-          tooltipPosition="bottom"
-          tooltiptext="Hey this is tooltip text, ssup"
-          >Tooltip Bottom</yo-tooltip
-        >
-      </div>
+        <div class="tooltip-container">
+          <yo-tooltip
+            tooltipPosition="bottom"
+            tooltiptext="Hey this is tooltip text, ssup"
+            >Tooltip Bottom</yo-tooltip
+          >
+        </div>
 
-      <div class="tooltip-container">
-        <yo-tooltip
-          tooltipPosition="left"
-          tooltiptext="Hey this is tooltip text, ssup"
-          >Tooltip Left</yo-tooltip
-        >
+        <div class="tooltip-container">
+          <yo-tooltip
+            tooltipPosition="left"
+            tooltiptext="Hey this is tooltip text, ssup"
+            >Tooltip Left</yo-tooltip
+          >
+        </div>
       </div>
     </yo-section>
 
     <yo-section>
-      <div class="btn-container">
-        <yo-button variant="contained" color="primary">contained</yo-button>
-      </div>
-      <div class="btn-container">
-        <yo-button variant="outlined" color="primary">outlined</yo-button>
-      </div>
-      <div class="btn-container">
-        <yo-button variant="text" color="primary">text</yo-button>
-      </div>
-      <div class="btn-container">
-        <yo-button variant="contained" color="primary">primary</yo-button>
-      </div>
-      <div class="btn-container">
-        <yo-button variant="contained" color="secondary">secondary</yo-button>
+      <div class="element-container">
+        <div class="btn-container">
+          <yo-button variant="contained" color="primary">contained</yo-button>
+        </div>
+        <div class="btn-container">
+          <yo-button variant="outlined" color="primary">outlined</yo-button>
+        </div>
+        <div class="btn-container">
+          <yo-button variant="text" color="primary">text</yo-button>
+        </div>
+        <div class="btn-container">
+          <yo-button variant="contained" color="primary">primary</yo-button>
+        </div>
+        <div class="btn-container">
+          <yo-button variant="contained" color="secondary">secondary</yo-button>
+        </div>
       </div>
     </yo-section>
 
     <yo-section>
-      <yo-select is-multiple />
+      <yo-select id="select-1" is-multiple />
+    </yo-section>
+
+    <yo-section>
+      <yo-select  id="select-2" />
     </yo-section>
 
     <yo-side-drawer menutitle="Menu">
@@ -115,7 +127,8 @@
     <script>
       const btn = document.querySelector("#menu-btn");
       const drawer = document.querySelector("yo-side-drawer");
-      const select = document.querySelector("yo-select");
+      const select1 = document.querySelector("#select-1");
+      const select2 = document.querySelector("#select-2");
 
       const options = [
         { label: "One", value: 1 },
@@ -123,7 +136,8 @@
         { label: "Three", value: 3 },
       ];
 
-      select.setAttribute('options', JSON.stringify(options))
+      select1.setAttribute("options", JSON.stringify(options));
+      select2.setAttribute("options", JSON.stringify(options));
 
       btn.addEventListener("click", () => {
         if (!drawer.open) {
