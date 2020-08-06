@@ -139,6 +139,13 @@
       select1.setAttribute("options", JSON.stringify(options));
       select2.setAttribute("options", JSON.stringify(options));
 
+      select1.addEventListener('selectChange', (e) => {
+        console.log(e.detail)
+      })
+      select2.addEventListener('selectChange', (e) => {
+        console.log(e.detail)
+      })
+
       btn.addEventListener("click", () => {
         if (!drawer.open) {
           drawer.open = true;

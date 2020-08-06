@@ -81,6 +81,7 @@ declare namespace LocalJSX {
     interface YoSelect {
         "isMultiple"?: boolean;
         "isSelecting"?: boolean;
+        "onSelectChange"?: (event: CustomEvent<any>) => void;
         "options"?: string;
     }
     interface YoSideDrawer {
